@@ -1,10 +1,15 @@
 # 🌐 VlanEnumerator by ShotokanZH
 
-This Python script 🐍 uses tcpdump 🐈 to enumerate **tagged** VLANs 🏷️ present on a specific network interface. 
+This Python script 🐍 enumerates **tagged** VLANs 🏷️ present on a specific network interface. 
 
 ## Prerequisites
 - Python >= 3.7 🐍
-- tcpdump 🐈
+- scapy >= 2.5.0
+
+To rapidly install all the dependencies (scapy) just run:
+```
+python3 -m pip install requirements.txt
+```
 
 ## Usage
 ```
@@ -21,6 +26,8 @@ options:
                         Listening time, 0 for unlimited (default)
 ```
 Replace `<interface>` with the name of the network interface you want to enumerate VLANs on.
+
+Note: this script needs to be run by root (euid == 0)
 
 ## Output
 The script will output a list of VLAN IDs that are currently tagged on the specified network interface.
